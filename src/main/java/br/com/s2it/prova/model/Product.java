@@ -20,10 +20,6 @@ public class Product implements Serializable{
 		this.id = id;
 	}
 	
-	@ManyToOne
-
-	@JoinColumn(name="nf_id")
-
 	private Nf nf;
 	
 	@Id

@@ -17,11 +17,16 @@ public class Nf implements Serializable{
 	public Nf() {
 		
 	}
+	
 	public Nf(int id) {
 		this.id = id;
 	}
 	
-	@OneToMany(mappedBy = "nf", targetEntity = Product.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	
+	@ManyToMany
+    @JoinTable(name="nf_product", joinColumns=
+    {@JoinColumn(name="nf_id")}, inverseJoinColumns=
+    {@JoinColumn(name="product_id")})
 	private List<Product>product;
 	
 	@Id
