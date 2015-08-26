@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.s2it.prova.model.Product;
@@ -18,7 +17,7 @@ public class ProductController {
 	
 	
 	public static final String VIEW = "product";
-	public static final String DELETE = "productDelete";
+	
 	
 	@Autowired
 	private ProductService service;
@@ -31,20 +30,7 @@ public class ProductController {
         return listAll();
     }
     
-    @RequestMapping(value = "/redirect", method = RequestMethod.GET)
-    public String redirect(@RequestParam String action){
-    	
-//    	switch (action) {
-//		case "delete":
-//			return DELETE;
-//
-//		default:
-//			break;
-//		}
-    	
-    	return null;
-    }
-    
+
     @RequestMapping(value = "" , method = RequestMethod.DELETE)
     public void delete(Product product){  
     	
@@ -66,7 +52,6 @@ public class ProductController {
     	
     	ModelAndView modView = new ModelAndView(VIEW);
     	modView.addObject("product", service.listAll());
-    	//modView.addObject("tes", "dsdasdasdsad");
-        return modView;
+    	return modView;
     }
 }
