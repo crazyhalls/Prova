@@ -20,6 +20,12 @@ public class Product implements Serializable{
 		this.id = id;
 	}
 	
+	@ManyToOne
+
+	@JoinColumn(name="nf_id")
+
+	private Nf nf;
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -53,4 +59,14 @@ public class Product implements Serializable{
     public BigDecimal getPrice(){
         return price;
     }
+
+	public Nf getNf() {
+		return nf;
+	}
+
+	public void setNf(Nf nf) {
+		this.nf = nf;
+	}
+    
+    
 }

@@ -32,20 +32,5 @@ public class NfService {
 		repository.delete(nf);
 	}
 	
-	public boolean canRemove(int id){
-		
-		Nf nf = null;
-		
-		try {
-			nf = (Nf) repository.findById(id);
-		} catch (Exception e) {
-			return false;
-		}
-		
-		if(nf != null){
-			return true;
-		}
-		
-		return false;
-	}
+	
 }

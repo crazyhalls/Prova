@@ -53,15 +53,4 @@ public class ProductEndpoint {
 		return new ResponseEntity<Product> (HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/remove/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> list(@PathVariable("id") int id){
-		
-		HttpStatus status = HttpStatus.NOT_FOUND;
-		
-		if(service.canRemove(id)){
-			status = HttpStatus.OK;
-		}
-		
-		return new ResponseEntity<Product>(status);
-	}
 }

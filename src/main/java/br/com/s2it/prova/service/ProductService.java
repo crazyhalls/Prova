@@ -32,20 +32,4 @@ public class ProductService {
 		repository.delete(product);
 	}
 	
-	public boolean canRemove(int id){
-		
-		Product product = null;
-		
-		try {
-			product = (Product) repository.findById(id);
-		} catch (Exception e) {
-			return false;
-		}
-		
-		if(product != null){
-			return true;
-		}
-		
-		return false;
-	}
 }
