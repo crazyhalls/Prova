@@ -27,7 +27,7 @@ public class Nf implements Serializable{
     @JoinTable(name="nf_product", joinColumns=
     {@JoinColumn(name="nf_id")}, inverseJoinColumns=
     {@JoinColumn(name="product_id")})
-	private List<Product>product;
+	private List <Product> productList;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,10 +63,10 @@ public class Nf implements Serializable{
 		this.barCode = barCode;
 	}
 	public List<Product> getProduct() {
-		return product;
+		return productList;
 	}
 	public void setProduct(List<Product> product) {
-		this.product = product;
+		this.productList = product;
 	}
 	
 	

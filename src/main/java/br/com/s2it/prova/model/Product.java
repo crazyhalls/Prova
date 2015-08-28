@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 
 @Entity
@@ -20,7 +21,8 @@ public class Product implements Serializable{
 		this.id = id;
 	}
 	
-	private Nf nf;
+	@ManyToMany
+	private List <Nf> nf;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,11 +58,11 @@ public class Product implements Serializable{
         return price;
     }
 
-	public Nf getNf() {
+	public List<Nf> getNf() {
 		return nf;
 	}
 
-	public void setNf(Nf nf) {
+	public void setNf(List<Nf> nf) {
 		this.nf = nf;
 	}
     

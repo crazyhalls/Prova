@@ -17,6 +17,8 @@ public class NfService {
 	private NfRepository repository;
 	
 	public void save(Nf nf){
+		
+		
 		repository.persist(nf);
 	}
 	

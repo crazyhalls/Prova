@@ -1,13 +1,13 @@
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/model/Nf.java
-/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/endpoint/ProductEndpoint.java
-/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/endpoint/NfEndpoint.java
+/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/view/ProductController.java
+/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/endpoint/NfEndpoint.java
+/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/view/NfController.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/model/Product.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/config/AppConfig.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/service/NfService.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/service/ProductService.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/repository/ProductRepository.java
-/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/NfController.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/repository/AbstractRepository.java
-/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/ProductController.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/repository/NfRepository.java
+/home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/controller/endpoint/ProductEndpoint.java
 /home/dmorais/workspace/AppProva/src/main/java/br/com/s2it/prova/model/Resource.java
