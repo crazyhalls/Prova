@@ -2,12 +2,20 @@ package br.com.s2it.prova.model;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.DynamicUpdate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 
+
 @Entity
+@DynamicUpdate
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "product")
 public class Product implements Serializable{	
 	
@@ -17,16 +25,20 @@ public class Product implements Serializable{
 		
 	}
 	
-	public Product(int id) {
-		this.id = id;
+	public Product(int product_id) {
+		this.product_id = product_id;
 	}
 	
-	@ManyToMany
-	private List <Nf> nf;
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
+    @JoinTable(name="nf_product", joinColumns=
+    {@JoinColumn(name="nf_id")}, inverseJoinColumns=
+    {@JoinColumn(name="product_id")})
+	private List <Nf> nf =new ArrayList<Nf>();
+	
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int product_id;
 
     @Column(name="description")
     private String description;
@@ -34,15 +46,15 @@ public class Product implements Serializable{
     @Column(name="price")
     private BigDecimal price;
 
-    public void setId(int id){
-        this.id = id;
-    }
+    public int getProduct_id() {
+		return product_id;
+	}
 
-    public int getId(){
-        return id;
-    }
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
 
-    public void setDescription(String description){
+	public void setDescription(String description){
         this.description = description;
     }
 
@@ -66,5 +78,7 @@ public class Product implements Serializable{
 		this.nf = nf;
 	}
     
+    
+
     
 }

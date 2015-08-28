@@ -1,12 +1,19 @@
 package br.com.s2it.prova.model;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 
-
 @Entity
+@DynamicUpdate
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "nf")
 public class Nf implements Serializable{	
 	
@@ -18,20 +25,20 @@ public class Nf implements Serializable{
 		
 	}
 	
-	public Nf(int id) {
-		this.id = id;
+	public Nf(int nf_id) {
+		this.nf_id = nf_id;
 	}
 	
 	
-	@ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
     @JoinTable(name="nf_product", joinColumns=
     {@JoinColumn(name="nf_id")}, inverseJoinColumns=
     {@JoinColumn(name="product_id")})
-	private List <Product> productList;
+	private List <Product> product =new ArrayList<Product>();
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int nf_id;
 	
 	@Column(name="name")
 	private String name;
@@ -39,12 +46,13 @@ public class Nf implements Serializable{
 	@Column(name="barcode")
 	private int barCode;
 
-	public int getId() {
-		return id;
+	
+	public int getNf_id() {
+		return nf_id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setNf_id(int nf_id) {
+		this.nf_id = nf_id;
 	}
 
 	public String getName() {
@@ -62,13 +70,16 @@ public class Nf implements Serializable{
 	public void setBarCode(int barCode) {
 		this.barCode = barCode;
 	}
+
 	public List<Product> getProduct() {
-		return productList;
+		return product;
 	}
+
 	public void setProduct(List<Product> product) {
-		this.productList = product;
+		this.product = product;
 	}
-	
-	
+
+
+
 
 }
