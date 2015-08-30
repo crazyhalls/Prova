@@ -22,8 +22,8 @@ public class NfService {
 		repository.persist(nf);
 	}
 	
-	public List<Nf> listAll(){
-		return repository.listAll();
+	public List<Nf> listNfWithProducts(int id){
+		return repository.listNfWithProducts(id);
 	}
 	
 	public void update(Nf nf){		

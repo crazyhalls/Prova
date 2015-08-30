@@ -50,7 +50,7 @@ public class NfController {
     public ModelAndView listAll(){    	
     	
     	ModelAndView modView = new ModelAndView(VIEW);
-    	modView.addObject("nf", service.listAll());
+    	//modView.addObject("nf", service.listAll());
     	return modView;
     }
 }

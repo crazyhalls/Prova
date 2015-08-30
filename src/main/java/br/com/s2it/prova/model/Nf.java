@@ -34,7 +34,7 @@ public class Nf implements Serializable{
     @JoinTable(name="nf_product", joinColumns=
     {@JoinColumn(name="nf_id")}, inverseJoinColumns=
     {@JoinColumn(name="product_id")})
-	private List <Product> product =new ArrayList<Product>();
+	private List <Product> product = new ArrayList<Product>();
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

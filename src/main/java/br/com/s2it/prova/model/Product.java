@@ -29,10 +29,10 @@ public class Product implements Serializable{
 		this.product_id = product_id;
 	}
 	
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch=FetchType.EAGER)
-    @JoinTable(name="nf_product", joinColumns=
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch=FetchType.LAZY)
+    /*@JoinTable(name="nf_product", joinColumns=
     {@JoinColumn(name="nf_id")}, inverseJoinColumns=
-    {@JoinColumn(name="product_id")})
+    {@JoinColumn(name="product_id")})*/
 	private List <Nf> nf =new ArrayList<Nf>();
 	
 	

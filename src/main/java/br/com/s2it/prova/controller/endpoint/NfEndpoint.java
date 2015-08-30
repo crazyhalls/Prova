@@ -31,10 +31,10 @@ public class NfEndpoint {
 		return new ResponseEntity<Nf> (HttpStatus.OK);
 	}
 		
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> list(){
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> list(@PathVariable("id") int id){
 		
-		return new ResponseEntity<List<Nf>>(service.listAll(),HttpStatus.OK);
+		return new ResponseEntity<List<Nf>>(service.listNfWithProducts(id),HttpStatus.OK);
 		}	
 	
 	@RequestMapping(value = "", method = RequestMethod.PATCH, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
